@@ -1,0 +1,34 @@
+{
+  "name": "GT-833 Constraint Annotation Schema",
+  "version": "3.0",
+  "description": "7-tuple constraint annotation schema for nuclear regulatory requirements",
+  "fields": {
+    "id": "Unique identifier (e.g., GT-001)",
+    "text": "Requirement text (paraphrase for copyrighted sources)",
+    "requirement_type": "mandatory | conditional | informative",
+    "source": "Regulatory source (e.g., IEEE 7-4.3.2, RG 1.152)",
+    "hierarchy_level": "0=10 CFR, 1=NRC RG, 2=IEEE/IEC, 3=EPRI",
+    "hierarchy_level_name": "Human-readable level name",
+    "parent_regulation": "Direct parent in regulatory hierarchy",
+    "top_regulation": "Top-level federal regulation",
+    "difficulty": "easy | medium | hard",
+    "constraints": "List of constraint 7-tuples (see below)"
+  },
+  "constraint_7tuple": {
+    "constraint_type": "boolean | numeric | temporal | logical | comparative | conditional | set",
+    "variable": "The measured quantity or system property",
+    "operator": "Comparison operator: <=, >=, ==, !=, exists, contains, etc.",
+    "value": "Threshold or reference value (null for boolean)",
+    "unit": "Unit of measure (null for boolean)",
+    "direction": "maximize | minimize | maintain | null",
+    "confidence": "0.0-1.0 LLM extraction confidence score"
+  },
+  "statistics": {
+    "total": 833,
+    "public_domain_nrc": 225,
+    "copyrighted_ieee_iec_epri": 608,
+    "boolean_pct": 97.4,
+    "numeric_pct": 1.7,
+    "temporal_pct": 0.9
+  }
+}

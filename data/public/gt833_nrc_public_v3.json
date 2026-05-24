@@ -1,0 +1,3897 @@
+{
+  "name": "GT-833 Nuclear Regulatory Benchmark — NRC Public Domain Subset",
+  "description": "Public domain subset of GT-833: 225 expert-validated reference annotations from NRC Regulatory Guides and 10 CFR regulations.",
+  "version": "3.0",
+  "license": "CC-BY-4.0",
+  "total_requirements": 225,
+  "notes": "This subset contains only NRC ADAMS public-domain documents. IEEE/IEC/EPRI-sourced annotations available upon academic request (see DATASET_CARD.md).",
+  "citation": "Lim, G.-H. and Jung, Y. (2026). GT-833 and NeuSys: An Auditable Neuro-Symbolic Framework for Nuclear Regulatory Constraint Extraction and Consistency Checking. Reliability Engineering and System Safety.",
+  "schema": {},
+  "requirements": [
+    {
+      "id": "GT-002",
+      "text": "Recovery time shall be no more than 24 hours.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "recovery_time",
+          "operator": "<=",
+          "value": 24,
+          "unit": "hours"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-003",
+      "text": "The system shall maintain availability of at least 99.9%.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "numeric",
+          "variable": "availability",
+          "operator": ">=",
+          "value": 99.9,
+          "unit": "percent"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-006",
+      "text": "The protection system shall have redundant channels.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "has_redundancy",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-008",
+      "text": "Software verification shall be performed by personnel independent of the development team.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "independent_verification",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "hard",
+      "notes": "Abstract constraint - independence requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-009",
+      "text": "The cyber security program shall ensure protection against cyber attacks up to and including the design basis threat.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_protection",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "hard",
+      "notes": "Cyber security with threat level constraint",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-068",
+      "text": "Design changes shall be subject to design control measures commensurate with those applied to the original design.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "design_control_measures_applied",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "medium",
+      "notes": "RG 1.169 Criterion III — design change control",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-069",
+      "text": "Design control measures shall provide for verifying or checking the adequacy of design by use of alternate or simplified calculational methods or by performance of a suitable testing program.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "design_adequacy_verification_provided",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "medium",
+      "notes": "RG 1.169 Criterion III — verification method requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-070",
+      "text": "The exact version and build number of commercial software products shall be identified and controlled according to change control procedures applied to other configuration items.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cots_version_identified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "medium",
+      "notes": "RG 1.169 Position 7 — COTS version control",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-071",
+      "text": "Software tools used in the production of safety system software shall be treated as configuration items.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "software_tools_under_configuration_control",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "easy",
+      "notes": "RG 1.169 Position 8 — tool configuration control",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-072",
+      "text": "All software design interfaces shall be identified and controlled according to configuration management procedures.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "design_interfaces_identified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "medium",
+      "notes": "RG 1.169 — interface control requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-073",
+      "text": "Change approval authority levels shall be commensurate with the life-cycle stage and the product's importance to safety.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "commensurate_approval_authority_assigned",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.169",
+      "difficulty": "medium",
+      "notes": "RG 1.169 Position 2 — authority levels",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-074",
+      "text": "Test documentation shall be completed prior to implementation in order to claim conformance to IEEE Std 829.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_documentation_complete",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        },
+        {
+          "constraint_type": "temporal",
+          "variable": "test_documentation_completion",
+          "operator": "==",
+          "value": "before_implementation",
+          "unit": null
+        }
+      ],
+      "source": "RG 1.170",
+      "difficulty": "medium",
+      "notes": "RG 1.170 Position 3 — test documentation timing",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-075",
+      "text": "The Master Test Report shall provide a summary of testing activities, test task results, anomalies and their resolutions, and quality metrics collected.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "anomaly_resolutions_documented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.170",
+      "difficulty": "medium",
+      "notes": "RG 1.170 Position 2 — MTR content requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-076",
+      "text": "Test records shall identify the inspector or data recorder, the type of observation made, the results and acceptability, and the action taken in connection with any deficiencies.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "inspector_identified_in_record",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.170",
+      "difficulty": "hard",
+      "notes": "RG 1.170 Criterion XVII — QA records requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-077",
+      "text": "All designated stakeholders shall sign off on test documentation content decisions and rationale at the highest level of testing.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "stakeholder_signoff_obtained",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.170",
+      "difficulty": "medium",
+      "notes": "RG 1.170 Position 3 — approval requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-078",
+      "text": "System testing shall be coordinated with software integration testing to ensure that all software features are adequately tested within the system context.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "system_and_integration_testing_coordinated",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.170",
+      "difficulty": "medium",
+      "notes": "RG 1.170 Position 4 — test coordination",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-079",
+      "text": "Software unit testing documentation shall include the qualifications, duties, responsibilities, and skills required of persons assigned to testing activities.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "tester_qualifications_documented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.171",
+      "difficulty": "easy",
+      "notes": "RG 1.171 Position 1 — personnel qualification documentation",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-080",
+      "text": "Test instructions and procedures shall incorporate the requirements and acceptance limits contained in applicable design documents.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "acceptance_limits_in_test_procedures",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.171",
+      "difficulty": "medium",
+      "notes": "RG 1.171 Position 1 — traceability requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-081",
+      "text": "Unit testing coverage criteria shall be identified and justified for all safety system software.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "coverage_criteria_identified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.171",
+      "difficulty": "medium",
+      "notes": "RG 1.171 Position 2 — coverage criteria",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-082",
+      "text": "Test materials that are reused and evolve during software development and maintenance shall be configuration items under change control of a software configuration management system.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_materials_under_scm",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.171",
+      "difficulty": "medium",
+      "notes": "RG 1.171 Position 3 — test material configuration control",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-083",
+      "text": "Quality standards and criteria shall be established and implemented to provide adequate assurance that safety system software will satisfactorily perform its safety functions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "quality_standards_established",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.171",
+      "difficulty": "easy",
+      "notes": "RG 1.171 GDC 1 — quality standards foundation",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-084",
+      "text": "Software requirements specifications shall include accurate requirements with units, error bounds, data type, and data size for each input and output variable.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "units_specified_for_all_variables",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "hard",
+      "notes": "RG 1.172 Position 2.b — SRS completeness",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-085",
+      "text": "Timing requirements in the SRS shall be deterministic and specified for both normal and anticipated failure conditions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "timing_requirements_deterministic",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "hard",
+      "notes": "RG 1.172 Position 2.b — timing constraint specification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-086",
+      "text": "Each identifiable requirement in the SRS shall be traceable backward to a higher-level requirements specification and ultimately to the system licensing and design bases.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "requirements_traceable_to_higher_level_spec",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "hard",
+      "notes": "RG 1.172 Position 2.g — full traceability requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-087",
+      "text": "All requirements in the SRS shall be verifiable; requirements shall be modified or restated as necessary to allow for verification of each one.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "all_srs_requirements_verifiable",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "medium",
+      "notes": "RG 1.172 Position 2.e — SRS verifiability",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-088",
+      "text": "Software requirements important to safety shall be explicitly identified as such in the SRS.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_important_requirements_explicitly_identified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "easy",
+      "notes": "RG 1.172 Position 6.a — safety identification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-089",
+      "text": "Incomplete SRS entries using 'to be determined' shall describe the applicable design bases and commitments to standards that govern final determination.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "applicable_design_bases_described",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.172",
+      "difficulty": "medium",
+      "notes": "RG 1.172 Position 4 — TBD handling",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-090",
+      "text": "All mandatory activities described as 'shall' in IEEE Std 1074 shall be performed, and all inputs, outputs, preconditions, and postconditions shall be described in the licensee's life-cycle model.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "all_mandatory_1074_activities_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        },
+        {
+          "constraint_type": "boolean",
+          "variable": "lifecycle_model_covers_all_io_conditions",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.173",
+      "difficulty": "hard",
+      "notes": "RG 1.173 Position 2 — IEEE 1074 compliance",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-091",
+      "text": "Planned and documented software safety analysis activities shall be conducted for each phase of the software development life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_analysis_conducted_each_phase",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.173",
+      "difficulty": "medium",
+      "notes": "RG 1.173 Position 3 — per-phase safety analysis",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-092",
+      "text": "Software safety analyses shall ensure that system safety requirements have been correctly addressed and no new hazards have been introduced.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_requirements_correctly_addressed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.173",
+      "difficulty": "hard",
+      "notes": "RG 1.173 Position 3.b — hazard non-introduction",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-093",
+      "text": "A temporary work-around shall not be installed in any safety system unless all software changes are performed in accordance with configuration controls and the changed software is verified offline prior to installation.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "configuration_controls_followed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.173",
+      "difficulty": "hard",
+      "notes": "RG 1.173 Position 4.a — temporary change control",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-094",
+      "text": "All changes to safety systems shall be evaluated using criteria specified in 10 CFR 50.59 before implementation.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "change_evaluated_per_10cfr50_59",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        },
+        {
+          "constraint_type": "temporal",
+          "variable": "evaluation_timing",
+          "operator": "==",
+          "value": "before_implementation",
+          "unit": null
+        }
+      ],
+      "source": "RG 1.173",
+      "difficulty": "medium",
+      "notes": "RG 1.173 Position 4.d — regulatory change evaluation",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-185",
+      "text": "Each nuclear power plant shall meet the requirements of the ASME Boiler and Pressure Vessel Code for nuclear safety-related components.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "asme_bpv_code_requirements_met",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "easy",
+      "notes": "10 CFR 50.55a(a)(1) — ASME BPV Code compliance",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-186",
+      "text": "Inservice inspection of nuclear power plant components shall be performed to the extent practical and the results evaluated against specified acceptance criteria.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "inservice_inspection_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a(b) — inservice inspection requirements",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-187",
+      "text": "Tests shall be performed to verify the operability of pressure-retaining components and valves prior to initial startup and periodically thereafter.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "valve_operability_testing_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a(f) — inservice testing of pumps and valves",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-188",
+      "text": "Initial startup tests shall be conducted over a period not to exceed 18 months from initial criticality to full-power operation.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "initial_startup_test_period",
+          "operator": "<=",
+          "value": 18.0,
+          "unit": "months"
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a — startup test period limit",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-189",
+      "text": "Repair and replacement activities for ASME Code Class 1, 2, and 3 components shall meet applicable Code requirements.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "repair_replacement_meets_asme_code",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "easy",
+      "notes": "10 CFR 50.55a(g) — repair and replacement requirements",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-190",
+      "text": "Inservice testing of pumps shall be performed at intervals not exceeding 3 months for quarterly tests and 2 years for comprehensive tests.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "pump_quarterly_test_interval",
+          "operator": "<=",
+          "value": 3.0,
+          "unit": "months"
+        },
+        {
+          "constraint_type": "temporal",
+          "variable": "pump_comprehensive_test_interval",
+          "operator": "<=",
+          "value": 24.0,
+          "unit": "months"
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "hard",
+      "notes": "10 CFR 50.55a(f) — pump inservice testing intervals",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-191",
+      "text": "The quality assurance program for ASME Code activities shall satisfy the requirements of 10 CFR 50 Appendix B.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "asme_activities_qa_program_meets_appendix_b",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "easy",
+      "notes": "10 CFR 50.55a — QA program conformance with Appendix B",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-192",
+      "text": "Welding and brazing activities on safety-related components shall be performed in accordance with ASME Code qualified procedures.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "welding_performed_per_asme_qualified_procedures",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "easy",
+      "notes": "10 CFR 50.55a(a)(3) — qualified welding procedures",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-193",
+      "text": "Nondestructive examination methods used for inservice inspection shall be qualified in accordance with ASME Code requirements.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "nde_methods_qualified_per_asme_code",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a — NDE method qualification",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-194",
+      "text": "Where ASME Code requirements are determined to be impractical, the licensee shall submit requests for relief to the NRC for review and approval.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "relief_request_submitted_to_nrc",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "hard",
+      "notes": "10 CFR 50.55a(g)(6) — relief requests for impractical requirements",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-195",
+      "text": "Inservice inspection records shall be maintained for the life of the plant and shall be made available to the NRC upon request.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "isi_records_maintained_for_plant_life",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        },
+        {
+          "constraint_type": "boolean",
+          "variable": "isi_records_available_to_nrc",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a — ISI record retention requirements",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-196",
+      "text": "Ultrasonic examination personnel shall be qualified in accordance with ASME Code Section XI Appendix VII requirements.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ut_personnel_qualified_per_asme_appendix_vii",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "medium",
+      "notes": "10 CFR 50.55a — UT personnel qualification",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-197",
+      "text": "Inservice testing of valves shall include stroke time testing with acceptance criteria specifying maximum allowable stroke time.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "valve_stroke_time_testing_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        },
+        {
+          "constraint_type": "temporal",
+          "variable": "valve_stroke_time",
+          "operator": "<=",
+          "value": 10.0,
+          "unit": "seconds"
+        }
+      ],
+      "source": "10 CFR 50.55a",
+      "difficulty": "hard",
+      "notes": "10 CFR 50.55a(f) — valve stroke time testing acceptance criteria",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-198",
+      "text": "Applicants and licensees shall submit a cyber security plan that satisfies the requirements of 10 CFR 73.54 to the NRC for review and approval.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_security_plan_submitted_to_nrc",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "easy",
+      "notes": "10 CFR 73.54(a)(1) — cyber security plan submission requirement",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-199",
+      "text": "The cyber security plan shall address how digital computer systems and networks associated with safety-related functions are protected from cyber attacks.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_plan_addresses_safety_system_protection",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "medium",
+      "notes": "10 CFR 73.54(b)(1) — cyber security plan scope for safety systems",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-200",
+      "text": "Each licensee shall implement and maintain a cyber security program that meets the requirements of the approved cyber security plan.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_security_program_implemented_and_maintained",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "easy",
+      "notes": "10 CFR 73.54(a)(2) — cyber security program implementation",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-201",
+      "text": "The cyber security plan shall establish, implement, and maintain the cyber security program for protecting digital computer and communication systems.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_plan_establishes_protection_program",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "medium",
+      "notes": "10 CFR 73.54(b) — cyber security plan program establishment",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-202",
+      "text": "Licensees shall protect digital computer and communication systems and networks associated with safety-related and important-to-safety functions from cyber attacks.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "digital_systems_protected_from_cyber_attacks",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "easy",
+      "notes": "10 CFR 73.54(a) — protection of safety-related digital systems",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-203",
+      "text": "The cyber security plan shall include measures to detect, respond to, and recover from cyber attacks on digital systems important to safety.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_attack_detection_measures_included",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "10 CFR 73.54",
+      "difficulty": "medium",
+      "notes": "10 CFR 73.54(b)(2) — detect, respond, recover measures",
+      "hierarchy_level": 0,
+      "hierarchy_level_name": "Federal Regulation (10 CFR)",
+      "parent_regulation": null,
+      "top_regulation": null
+    },
+    {
+      "id": "GT-204",
+      "text": "Software tools used in the development of safety system software shall be qualified to demonstrate their suitability for the intended application.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_software_development_tools_qualified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4 — software tool qualification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-205",
+      "text": "Software requirements specifications for safety system software shall be prepared, reviewed, and approved prior to commencement of software design.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_prepared_reviewed_approved",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.1 — SRS preparation and approval sequence",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-206",
+      "text": "Verification and validation of the software shall be conducted in accordance with the Software Verification and Validation Plan (SVVP).",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_conducted_per_svvp",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.3 — V&V per SVVP",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-207",
+      "text": "A Software Quality Assurance Plan (SQAP) shall be prepared and implemented for safety system software development activities.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sqap_prepared_and_implemented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.4 — SQAP requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-208",
+      "text": "A Software Configuration Management Plan (SCMP) shall be prepared and implemented to control safety system software throughout its life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scmp_prepared_and_implemented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.5 — SCMP requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-209",
+      "text": "Each software item shall be independently reviewed by personnel not responsible for its development prior to its use in safety functions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "software_item_independently_reviewed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.3 — independent review of software items",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-210",
+      "text": "The response time for safety functions implemented in digital computer systems shall not exceed the maximum allowable response time defined in the design basis.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "safety_function_response_time",
+          "operator": "<=",
+          "value": 100.0,
+          "unit": "ms"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "hard",
+      "notes": "RG 1.152 §4.2 — digital safety function response time limit",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-211",
+      "text": "The Software Development Plan (SDP) shall document the processes, methods, standards, and tools to be used throughout the software development life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdp_documents_processes_and_standards",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.1 — SDP content requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-212",
+      "text": "Safety system software shall undergo a formal design review that examines compliance with requirements, design standards, and safety criteria.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "formal_design_review_conducted",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.3 — formal design review requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-213",
+      "text": "Digital I&C systems used in safety functions shall be designed so that a single failure does not prevent the safety function from performing its intended action.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "single_failure_does_not_prevent_safety_function",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "hard",
+      "notes": "RG 1.152 §4.2 — single failure criterion for digital I&C",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-214",
+      "text": "The V&V plan shall be prepared and maintained for each software item used in safety systems throughout the software life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_plan_prepared_and_maintained",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.1 — V&V plan preparation and maintenance",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-215",
+      "text": "V&V tasks shall be performed at each phase of the software development life cycle to detect errors as early as possible.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_tasks_performed_at_each_sdlc_phase",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.2 — V&V tasks at each SDLC phase",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-216",
+      "text": "The SVVP shall identify V&V tasks for the requirements, design, implementation, testing, and installation phases of the software life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "svvp_identifies_vv_tasks_for_all_phases",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.1 — SVVP phase coverage",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-217",
+      "text": "Traceability between software requirements and test cases shall be established and maintained to ensure complete test coverage.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "requirements_to_test_case_traceability_established",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.3 — requirements-to-test traceability",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-218",
+      "text": "V&V activities shall include an evaluation of whether the software requirements are correct, complete, consistent, and verifiable.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_evaluates_requirements_quality",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.2 — requirements quality evaluation in V&V",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-219",
+      "text": "The V&V effort shall be conducted by personnel who are organizationally and technically independent of the development team.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_personnel_independent_of_development",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.1 — V&V independence",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-220",
+      "text": "V&V test documentation shall include test plans, test procedures, test cases, and test reports for each V&V task.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_test_documentation_complete",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.4 — V&V test documentation requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-221",
+      "text": "Acceptance criteria for each V&V task shall be defined in advance and approved before the V&V task begins.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_acceptance_criteria_predefined",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.3 — pre-defined V&V acceptance criteria",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-222",
+      "text": "All V&V discrepancy reports shall be resolved and closed before the software is placed into service in a safety function.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "all_vv_discrepancies_resolved_before_service",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "hard",
+      "notes": "RG 1.168 §4.4 — discrepancy resolution before operational use",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-223",
+      "text": "A cyber security assessment shall be performed to identify critical digital assets and critical systems associated with nuclear safety, security, and emergency preparedness functions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_security_assessment_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.1 — cyber security assessment and CDA identification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-224",
+      "text": "Defense-in-depth protective strategies shall be implemented for critical digital assets to provide protection against the consequences of cyber attacks.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defense_in_depth_implemented_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.2 — defense-in-depth for critical digital assets",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-225",
+      "text": "Access controls for critical digital assets shall be implemented to limit access to authorized individuals and to detect unauthorized access attempts.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "access_controls_implemented_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.3 — access controls for CDAs",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-226",
+      "text": "The cyber security program shall include monitoring of critical digital assets to detect, analyze, and respond to cyber attacks in a timely manner.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_monitoring_for_cyber_attack_detection",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.4 — cyber attack monitoring and detection",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-227",
+      "text": "Portable media and mobile devices shall not be connected to critical digital assets unless they have been scanned and cleared by the cyber security program.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "portable_media_scanned_and_cleared",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.5 — portable media and mobile device controls",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-228",
+      "text": "A cyber security incident response plan shall be developed, maintained, and tested to ensure timely and effective response to cyber security incidents.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_incident_response_plan_developed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.6 — cyber security incident response plan",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-229",
+      "text": "Security patches for software on critical digital assets shall be evaluated and applied in a timely manner consistent with the cyber security program.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "security_patches_evaluated_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.3 — security patch management for CDAs",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-230",
+      "text": "Personnel with responsibilities for critical digital assets shall receive cyber security training commensurate with their duties and responsibilities.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_personnel_receive_cyber_security_training",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.7 — cyber security training for CDA personnel",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-614",
+      "source": "RG 1.152",
+      "text": "Safety-related instrumentation and control systems shall be designed to operate in a predictable and repeatable manner such that a given set of input signals always produces the same output signals.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ic_system_predictable_repeatable_operation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-615",
+      "source": "RG 1.152",
+      "text": "PDDs used in safety-related systems shall have adequate system integrity such that the safety-related system can operate in a predictable and repeatable manner under all design-basis conditions.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "pdd_system_integrity_requirement",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-616",
+      "source": "RG 1.152",
+      "text": "Sufficient independence shall be incorporated into the instrumentation and control design to prevent the propagation of faults from non-safety-related systems to safety-related systems.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "independence_nsr_to_sr_fault_propagation_prevention",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-617",
+      "source": "RG 1.152",
+      "text": "Sufficient independence shall be incorporated into the I&C design to prevent the propagation of faults between redundant portions of a safety-related system.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "independence_redundant_division_fault_propagation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-618",
+      "source": "RG 1.152",
+      "text": "Provisions for interdivisional communication shall prevent the ability to send software instructions to a safety function processor that could adversely impact the processor's functionality, unless all safety functions associated with that processor are either bypassed, in a trip state, or not in service.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "interdivisional_comm_software_instruction_restriction",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-619",
+      "source": "RG 1.152",
+      "text": "The progress of a safety function processor through its instruction sequence shall not be affected by any message received from outside its division.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_processor_instruction_sequence_external_msg_immunity",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-620",
+      "source": "RG 1.152",
+      "text": "Data communication bandwidth shall be sufficient to prevent data congestion in safety-related digital I&C communication networks.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "data_comm_bandwidth_congestion_prevention",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-621",
+      "source": "RG 1.152",
+      "text": "If self-diagnostic features are integrated into safety-related DI&C systems, the design of those self-diagnostic features shall maintain channel independence and system integrity and shall meet the single-failure criterion.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "self_diagnostics_channel_independence_single_failure",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-622",
+      "source": "RG 1.152",
+      "text": "If self-diagnostics are used, the safety classification of hardware and software performing self-diagnostics shall be equivalent to that of the tested system unless physical, electrical, and communication independence are maintained such that no failure of the test function can inhibit the safety function.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "self_diagnostics_safety_classification_equivalence",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-623",
+      "source": "RG 1.152",
+      "text": "Failures detected by self-diagnostics shall be consistent with the failure detectability assumptions of the single-failure analysis and the failure modes and effects analysis.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "self_diagnostics_failure_consistency_sfca_fmea",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-624",
+      "source": "RG 1.152",
+      "text": "Self-diagnostic functions shall be verified during periodic functional tests of the safety-related DI&C system.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "self_diagnostics_periodic_functional_test_verification",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-625",
+      "source": "RG 1.152",
+      "text": "A watchdog timer used to detect lock-up conditions in a microprocessor-based device shall not be susceptible to the same failure condition as the microprocessor it is monitoring.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "wdt_independent_failure_mode_from_monitored_processor",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-626",
+      "source": "RG 1.152",
+      "text": "Upon detection of a lock-up condition or other failure by a watchdog timer, the watchdog timer shall place the output of the system into a predetermined fail-safe state, and this function shall be completed independently of the microprocessor being monitored.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "wdt_fail_safe_state_independent_actuation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-627",
+      "source": "RG 1.152",
+      "text": "Implementation of cybersecurity features shall not adversely impact the performance, effectiveness, reliability, or operation of safety functions in safety-related systems.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_features_no_adverse_safety_impact",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-628",
+      "source": "RG 1.152",
+      "text": "Licensees and applicants shall provide a vulnerability assessment for the secure development and operational environment (SDOE) in accordance with the guidance of Clause 5.9 of IEEE Std 7-4.3.2-2016, and shall identify measures or design features to address identified vulnerabilities.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdoe_vulnerability_assessment_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-629",
+      "source": "RG 1.152",
+      "text": "Receipt, storage, staging, and testing of safety-related PDDs before installation shall occur in a secure environment.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "pdd_pre_installation_secure_environment_handling",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-630",
+      "source": "RG 1.152",
+      "text": "Safety-related I&C systems shall not present an electronic path that could enable unauthorized access to the plant's safety-related system; the use of a hardware-based unidirectional device is one acceptable approach for implementing such measures.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_ic_no_unauthorized_electronic_access_path",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-631",
+      "source": "RG 1.152",
+      "text": "The control processor and its associated communication processor for multidivisional control and display stations shall only process commands that pass error checking.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "multidivisional_control_processor_error_check_enforcement",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-632",
+      "source": "RG 1.152",
+      "text": "PDDs used in safety-related systems shall have hazards identified and controlled in accordance with a hazard analysis method acceptable to the NRC staff, such as the approach described in Annex D of IEEE Std 7-4.3.2-2016.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "pdd_hazard_identification_and_control_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-633",
+      "source": "RG 1.152",
+      "text": "The design of self-diagnostic features shall minimize complexity added to the safety-related system while maximizing system reliability and fault detection capabilities, and interfaces between protection software and self-diagnostic software shall be designed to minimize complexity of software logic and data structures.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "self_diagnostics_complexity_minimization_design_principle",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-634",
+      "source": "RG 1.152",
+      "text": "Commercial digital equipment used in safety-related systems shall be evaluated and dedicated in accordance with the criteria in Clause 5.17 of IEEE Std 7-4.3.2-2016 and applicable guidance in RG 1.164 or RG 1.250.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cots_equipment_dedication_per_clause_5_17",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-635",
+      "source": "RG 1.152",
+      "text": "Potential common-cause failures in PDDs of safety-related systems shall be addressed using defense-in-depth and diversity assessments in accordance with the criteria of Clause 5.16 of IEEE Std 7-4.3.2-2016 and BTP 7-19.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ccf_defense_in_depth_diversity_assessment_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-636",
+      "source": "RG 1.152",
+      "text": "If a priority function is used to prioritize command signals between safety-related and non-safety-related PDDs for actuating a safety-related component, the licensee or applicant shall analyze the implementation to identify potential hazards due to increased interconnectivity.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "priority_function_interconnectivity_hazard_analysis",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-637",
+      "source": "RG 1.168",
+      "text": "Software used in nuclear power plant safety systems shall be assigned software integrity level 4, or the equivalent as demonstrated by a mapping between the applicant's or licensee's approach and integrity level 4 as defined in IEEE Std. 1012-2004.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_software_integrity_level_4_assignment",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-638",
+      "source": "RG 1.168",
+      "text": "The V&V organization shall be independent of the design organization, with technical, financial, and managerial independence such that V&V personnel are not subject to the budgetary and scheduling constraints of the design organization or project management function.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_org_financial_managerial_technical_independence",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-639",
+      "source": "RG 1.168",
+      "text": "Design verification or checking of safety system software shall be performed by individuals or groups other than those who prepared the original design.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_design_check_by_different_personnel",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-640",
+      "source": "RG 1.168",
+      "text": "The applicant or licensee shall retain ultimate responsibility for the adequacy of V&V and the quality of subsequent safety system software, even when an external organization has performed the V&V tasks.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "applicant_licensee_vv_ultimate_responsibility",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-641",
+      "source": "RG 1.168",
+      "text": "Independent verifiers shall be at least as proficient, and preferably more proficient, than the developers in both software engineering and I&C safety system functionality and design.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "iv_verifier_proficiency_requirement",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-642",
+      "source": "RG 1.168",
+      "text": "There shall be an acceptable organizational structure, including a mapping of that structure, to demonstrate a sufficient application of an independent V&V organization that is separate from the development effort.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ivv_org_structure_mapping_documented",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-643",
+      "source": "RG 1.168",
+      "text": "The conditional independence option described in Annex C, Table C.1 of IEEE Std. 1012-2004 shall not be used as an acceptable form of independence for safety system software V&V.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "conditional_independence_not_acceptable_for_vv",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-644",
+      "source": "RG 1.168",
+      "text": "V&V organizations performing safety system software V&V shall conduct functional audits, in-process audits, and physical audits of software, and if relied upon, these audits shall be described in the software V&V plan.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_org_shall_conduct_functional_inprocess_physical_audits",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-645",
+      "source": "RG 1.168",
+      "text": "Regression analysis and testing following the implementation of software modifications shall be part of the minimum set of software V&V activities for safety system software.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "regression_analysis_testing_mandatory_after_modification",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-646",
+      "source": "RG 1.168",
+      "text": "V&V tasks for secure analysis shall verify and validate the secure development and operational environment (SDOE) feature criteria and functions, and shall assure protection from inadvertent manipulation of the test environment and test results.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "secure_analysis_vv_tasks_sdoe_verification",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-647",
+      "source": "RG 1.168",
+      "text": "Measures taken to secure the V&V test environment and processes shall address the V&V test phase vulnerabilities identified in the vulnerability assessment.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_test_environment_vulnerability_addressed",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-648",
+      "source": "RG 1.168",
+      "text": "Test evaluation activities shall confirm the technical adequacy of test plans, test designs, and test results, evaluating them for consistency with requirements for controlled conditions and for evaluation of test results.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_evaluation_technical_adequacy_confirmation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-649",
+      "source": "RG 1.168",
+      "text": "User documentation for safety system software shall be evaluated as part of V&V activities to verify that the design basis of the safety system software has been correctly translated into specifications, procedures, drawings, and instructions.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "user_documentation_vv_evaluation_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-650",
+      "source": "RG 1.168",
+      "text": "Any V&V materials necessary for the verification of the effectiveness of V&V programs, or necessary to furnish evidence of activities affecting quality, shall be maintained as quality assurance records.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_materials_maintained_as_qa_records",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-651",
+      "source": "RG 1.168",
+      "text": "Records necessary for the verification of software changes shall be maintained in accordance with Criterion XVII of 10 CFR Part 50, Appendix B, which requires retention of records that furnish evidence of activities affecting quality and descriptions of actions taken in connection with any changes or design deficiencies noted.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "software_change_records_retained_per_criterion_xvii",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-652",
+      "source": "RG 1.168",
+      "text": "Tools used in the development of safety system software shall be handled in accordance with IEEE Std. 7-4.3.2, as endorsed by RG 1.152; if V&V activities cannot demonstrate that flaws introduced by a tool will be detected, then the provisions of RG 1.168 shall apply to development of the tool itself.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "software_development_tools_vv_requirement",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-653",
+      "source": "RG 1.168",
+      "text": "Component and integration test plans shall describe methods for measuring software reliability that serve as criteria for determining if software elements correctly implement software requirements.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "component_integration_test_plans_reliability_criteria",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-654",
+      "source": "RG 1.168",
+      "text": "NRC staff acceptance of quantitative reliability goals for computer-based safety systems shall be predicated on deterministic criteria for the computer system in its entirety, including hardware, system software, firmware, application software, and interconnections.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "quantitative_reliability_goals_deterministic_criteria_basis",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-655",
+      "source": "RG 1.168",
+      "text": "A comprehensive system of planned and periodic audits shall be carried out to verify compliance with all aspects of the software quality assurance program and to determine the effectiveness of the program, in accordance with Criterion XVIII of 10 CFR Part 50, Appendix B.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "periodic_audits_qa_program_compliance_verification",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-656",
+      "source": "RG 1.168",
+      "text": "IEEE Std. 1012-2004 and IEEE Std. 1028-2008 shall not be used as the basis for demonstrating compliance with 10 CFR 73.54 for cybersecurity requirements; a licensee's adherence to 10 CFR 73.54 shall be evaluated under the regulatory programs specific to that regulation.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ieee_1012_1028_not_applicable_to_10cfr73_54",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-657",
+      "source": "RG 1.168",
+      "text": "The software V&V plan (SVVP) shall describe all audits relied upon by the V&V organization, including functional audits, in-process audits, and physical audits, when these activities are part of the V&V program.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "svvp_shall_describe_all_vv_audits",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-658",
+      "source": "RG 1.168",
+      "text": "Quality assurance functions shall include verifying, by checking, auditing, and inspecting, that activities affecting safety-related software functions have been correctly performed, and persons or organizations performing these functions shall report to a management level with sufficient authority and organizational freedom.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "qa_functions_independence_management_reporting_requirement",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-659",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall identify and control all software designs and code as configuration items throughout the software life cycle.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_identifies_all_designs_and_code",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-660",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall identify and control all software design interfaces, including design interfaces between participating design organizations.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_controls_design_interfaces",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-661",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe the control process for all software design changes, including change requests, change evaluation, change approval, change implementation, change verification, and changed-version release.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_describes_change_control_process",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-662",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall provide for the control of software documentation, including user, operating, and maintenance documentation.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_controls_software_documentation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-663",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe provisions for controlling software vendors supplying safety system software, consistent with Criterion VII of Appendix B to 10 CFR Part 50.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_controls_software_vendors",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-664",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe provisions for software configuration audits, including both a functional configuration audit (FCA) and a physical configuration audit (PCA) when a product is delivered.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_includes_fca_and_pca",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-665",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall include provisions for status accounting, enabling the tracking and reporting of the configuration status of all configuration items throughout the software life cycle.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_includes_status_accounting",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-666",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe how the building, release, delivery, change control, and master copies of code and documentation will be formally controlled in accordance with the policies of the organizations involved.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_controls_release_and_delivery",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-667",
+      "source": "RG 1.169",
+      "text": "Configuration items for safety system software shall include, at a minimum, software requirements, designs, and code; data files; support software used in development; libraries of software components essential to safety; software plans; test software; test results; analyses; software documentation; test cases; databases; and software change documentation.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ci_list_includes_all_required_items",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-668",
+      "source": "RG 1.169",
+      "text": "The SCM program shall take control of contractually developed or qualified commercial off-the-shelf (COTS) software products that are safety system software, including identification of the exact version and build number.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_controls_cots_software_version_and_build",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-669",
+      "source": "RG 1.169",
+      "text": "Software tools used in the production of safety system software shall be treated as configuration items under the SCM program.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "development_tools_treated_as_configuration_items",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-670",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe the correspondence between control points, baselines, project milestones, and life-cycle milestones, including criteria for selecting control points.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_defines_control_points_and_baselines",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-671",
+      "source": "RG 1.169",
+      "text": "The hierarchy of change approval authority levels shall be commensurate with the life-cycle stage and the product's importance to safety, with a change in responsible individual required when promoting software from one safety significance level to another.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "change_approval_authority_commensurate_with_safety_level",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-672",
+      "source": "RG 1.169",
+      "text": "Design changes to safety system software shall be subject to design control measures commensurate with those applied to the original design, including reexamination of any appropriate safety analysis related to the change.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "design_changes_subject_to_commensurate_design_controls",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-673",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe preliminary steps leading to a change request, including responsibility for executing and documenting anomaly reports, problem analyses, and statistical monitoring of software performance.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_describes_anomaly_reporting_and_problem_analysis",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-674",
+      "source": "RG 1.169",
+      "text": "The SCM plan shall describe provisions for control and retrieval of qualification information associated with software designs and code, consistent with Criterion XVII of Appendix B to 10 CFR Part 50.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scm_plan_controls_qualification_information_retrieval",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-675",
+      "source": "RG 1.170",
+      "text": "The licensee shall use the Master Test Plan (MTP) consistent with IEEE Std. 829-2008, Clause 8, as the highest-level test planning document, incorporating all required test activities and tasks.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "master_test_plan_required_per_ieee_829_clause_8",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-676",
+      "source": "RG 1.170",
+      "text": "The test documentation shall specify the qualifications, duties, responsibilities, and skills required of persons and organizations assigned to testing activities.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_doc_specifies_tester_qualifications_and_responsibilities",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-677",
+      "source": "RG 1.170",
+      "text": "The test documentation shall describe the special conditions, controls, equipment, tools, and instrumentation needed for the accomplishment of testing.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_doc_describes_test_environment_and_equipment",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-678",
+      "source": "RG 1.170",
+      "text": "The Level Test Case (LTC) documentation shall specify acceptance criteria for each test case, including expected outputs and pass/fail limits derived from applicable design documents.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ltc_specifies_acceptance_criteria_per_design_docs",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-679",
+      "source": "RG 1.170",
+      "text": "The Level Test Procedure (LTPr) documentation shall specify the steps to be taken during test execution, including test prerequisites and criteria for meeting requirements and acceptance limits.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "ltpr_specifies_test_steps_and_prerequisites",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-680",
+      "source": "RG 1.170",
+      "text": "The Level Test Log (LTL) shall record the identity of the tester, the type of observation made, the results and acceptability, and the action taken in connection with any deficiencies.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_log_records_tester_identity_results_and_actions",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-681",
+      "source": "RG 1.170",
+      "text": "The Master Test Report (MTR) shall provide a summary of testing activities, test task results, anomalies and resolutions, quality metrics, and suitability of the project, reflecting the MTP.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "master_test_report_summarizes_all_testing_activities",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-682",
+      "source": "RG 1.170",
+      "text": "An Anomaly Report (AR) shall be generated for any error or anomaly identified during testing, and the documentation shall show corrections and retesting, as any modified software has the potential of introducing new errors.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "anomaly_report_documents_errors_corrections_and_retesting",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-683",
+      "source": "RG 1.170",
+      "text": "Software test documentation shall be controlled as configuration items under a software configuration management (SCM) system, since such documentation is reused and evolves during software development and maintenance.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_documentation_controlled_as_scm_configuration_items",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-684",
+      "source": "RG 1.170",
+      "text": "The licensee or applicant shall assign integrity level 4 (or its equivalent with a documented mapping) to software used in nuclear power plant safety systems throughout the life-cycle testing process.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_software_assigned_integrity_level_4",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-685",
+      "source": "RG 1.170",
+      "text": "The test documentation shall include a traceability matrix relating software functions, requirements, and test cases to provide assurance that all safety-related functions are tested.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_doc_includes_requirements_to_test_case_traceability_matrix",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-686",
+      "source": "RG 1.170",
+      "text": "Security issue identification shall be included as a required test task in all applicable life-cycle phases, including acquisition, supply, planning, concept, requirements, design, implementation, test, installation, and operation.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "security_issue_identification_included_in_all_lifecycle_phases",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-687",
+      "source": "RG 1.170",
+      "text": "The licensee shall formally test all associated features in the safety system; a test design shall not merely exercise features incidentally without formally identifying them as test objectives.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "all_safety_system_features_formally_tested",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-688",
+      "source": "RG 1.170",
+      "text": "Test documentation content decisions and rationale shall be documented at the highest level of testing, and documentation shall be signed off by all designated stakeholders prior to implementation.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_doc_signed_off_by_stakeholders_prior_to_implementation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-689",
+      "source": "RG 1.170",
+      "text": "Test tool documentation shall ensure that test information produced by automated tools is accessible and traceable within the record management system, with repetition provided where necessary for safety conclusions.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_tool_output_accessible_and_traceable_in_record_system",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-690",
+      "source": "RG 1.170",
+      "text": "Test records shall be maintained as quality records, and shall identify the inspector or data recorder, the type of observation made, the results, the acceptability of results, and the action taken in connection with any noted deficiencies.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_records_maintained_as_quality_records_with_required_fields",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-691",
+      "source": "RG 1.171",
+      "text": "Software unit testing documentation shall include the qualifications, duties, responsibilities, and skills required of persons and organizations assigned to unit testing activities.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_doc_includes_tester_qualifications",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-692",
+      "source": "RG 1.171",
+      "text": "Software unit testing documentation shall include test instructions and procedures that incorporate the requirements and acceptance limits contained in applicable design documents.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_procedures_incorporate_design_acceptance_limits",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-693",
+      "source": "RG 1.171",
+      "text": "Software unit testing documentation shall include test logs, test data, and test results, along with test records that indicate the identity of the tester, the type of observation, the results and acceptability, and the action taken for any deficiencies.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_logs_record_tester_identity_and_results",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-694",
+      "source": "RG 1.171",
+      "text": "Unit testing shall cover all features and associated procedures, states, state transitions, and data characteristics essential to the safety determination of the software unit.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_testing_covers_all_safety_essential_features_and_states",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-695",
+      "source": "RG 1.171",
+      "text": "Statement coverage alone shall not be used as a sufficient criterion for measuring the completeness of unit testing for safety system software; the licensee shall identify and justify the unit testing coverage criteria it will use.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "statement_coverage_insufficient_must_justify_coverage_criteria",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-696",
+      "source": "RG 1.171",
+      "text": "The licensee shall identify and justify the unit testing coverage criteria it will use, which shall address both requirements coverage and internal module structural coverage beyond statement coverage.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_coverage_criteria_justified_beyond_statement_coverage",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-697",
+      "source": "RG 1.171",
+      "text": "Software unit test materials, including regression test materials, shall be configuration items under the change control of a software configuration management system, as they are frequently reused and evolve during software development and maintenance.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_materials_controlled_as_scm_configuration_items",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-698",
+      "source": "RG 1.171",
+      "text": "Test iterations caused by any task, procedure, or design criteria variations or deviations from the original test plans shall be preserved as part of the testing products.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "test_iterations_from_deviations_preserved_in_test_products",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-699",
+      "source": "RG 1.171",
+      "text": "Design changes to safety system software shall be subject to unit test controls commensurate with those applied to the original design, including regression testing to verify that changes do not introduce new defects.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "design_changes_require_regression_unit_testing",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-700",
+      "source": "RG 1.171",
+      "text": "Software unit testing shall be performed with independence as required by Criterion III of Appendix B to 10 CFR Part 50, with the verification and checking of design adequacy performed independently from the development activity.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_testing_requires_independence_from_development",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-701",
+      "source": "RG 1.171",
+      "text": "Software unit testing shall be consistent with the planning information established in the software V&V plans and higher-level software test plans developed per IEEE Std. 1012-2004 as endorsed by RG 1.168.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_testing_consistent_with_vv_plan_and_higher_level_test_plans",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-702",
+      "source": "RG 1.171",
+      "text": "Software unit testing documentation shall include test prerequisites and the criteria for meeting requirements and acceptance limits prior to commencing the unit test execution.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_doc_specifies_prerequisites_and_acceptance_criteria",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-703",
+      "source": "RG 1.171",
+      "text": "The software unit test plan shall identify the items to be tested, the approach taken by the testing program, and the special conditions, controls, equipment, tools, and instrumentation needed for testing.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_plan_identifies_items_approach_and_equipment",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-704",
+      "source": "RG 1.171",
+      "text": "IEEE Std. 829-2008, as endorsed by RG 1.170, shall be used for unit test documentation formats in place of the superseded ANSI/IEEE Std. 829-1983 referenced within ANSI/IEEE Std. 1008-1987.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "unit_test_documentation_uses_ieee_829_2008_not_829_1983",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-705",
+      "source": "RG 1.172",
+      "text": "The SRS shall specify how each software function is initiated and terminated, and shall specify the system status at termination.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_function_initiation_termination_specified",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-706",
+      "source": "RG 1.172",
+      "text": "The SRS shall provide the accuracy requirements, including units, error bounds, data type, and data size, for each input and output variable.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_accuracy_requirements_per_io_variable",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-707",
+      "source": "RG 1.172",
+      "text": "The SRS shall fully describe the variables controlled or monitored in the physical environment and shall expressly describe prohibited functions.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_physical_variables_and_prohibited_functions_described",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-708",
+      "source": "RG 1.172",
+      "text": "Timing requirements in the SRS shall be deterministic and shall be specified for both normal and anticipated failure conditions.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_timing_requirements_deterministic_and_failure_conditions",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-709",
+      "source": "RG 1.172",
+      "text": "The SRS shall identify all functions with timing constraints and shall provide criteria for each mode of operation.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_timing_constraints_identified_per_mode",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-710",
+      "source": "RG 1.172",
+      "text": "The SRS shall be internally consistent such that no requirement in the specification conflicts with any other requirement in the specification.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_internal_consistency_no_conflicts",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-711",
+      "source": "RG 1.172",
+      "text": "The SRS shall be externally consistent with associated software products and system products such as safety system requirements and design.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_external_consistency_with_system_requirements",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-712",
+      "source": "RG 1.172",
+      "text": "Software requirements important to safety shall be identified as such in the SRS, with linkage to the applicable plant design bases and regulatory provisions.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_safety_requirements_identified_and_linked",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-713",
+      "source": "RG 1.172",
+      "text": "All requirements in the SRS shall be verifiable, and any unverifiable requirements shall be modified or restated to allow for verification of each one.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_all_requirements_verifiable",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-714",
+      "source": "RG 1.172",
+      "text": "Each identifiable requirement in the SRS shall be backward traceable to a higher-level requirements specification and ultimately to the system licensing basis and design bases.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_backward_traceability_to_system_requirements",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-715",
+      "source": "RG 1.172",
+      "text": "Each requirement in the SRS shall be forward traceable to the specific inspections, analyses, or tests used to confirm that the requirement has been met.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_forward_traceability_to_verification_materials",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-716",
+      "source": "RG 1.172",
+      "text": "The SRS shall be unambiguous such that every requirement has only one interpretation, and the combination of the SRS and associated documents shall be unambiguous.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_unambiguity_single_interpretation",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-717",
+      "source": "RG 1.172",
+      "text": "Any entry in the SRS that is incomplete shall describe the applicable design bases and commitments to standards or regulations that govern the final determination of the requirement entry.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_tbd_entries_include_design_bases_commitments",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-718",
+      "source": "RG 1.172",
+      "text": "When specific design techniques or features such as independence, separation, diversity, and defense in depth are required by the safety system design bases or by regulation, they shall be described in the SRS.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_design_features_independence_diversity_described",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-719",
+      "source": "RG 1.172",
+      "text": "The SRS shall specify software requirements for fault tolerance and failure modes, derived from system-level hazard analyses or software internals, for each operating mode.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_fault_tolerance_failure_modes_per_operating_mode",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-720",
+      "source": "RG 1.172",
+      "text": "The SRS shall fully specify software behavior in the presence of unexpected, incorrect, anomalous, and improper input, hardware behavior, or software behavior.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_software_behavior_under_anomalous_conditions",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-721",
+      "source": "RG 1.172",
+      "text": "The SRS shall include requirements for online inservice testing and diagnostics for safety system software.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_inservice_testing_diagnostics_requirements",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-722",
+      "source": "RG 1.172",
+      "text": "The SRS shall be placed under a formal change control procedure or under a general software configuration management program as a configuration item.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_under_formal_change_control",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-723",
+      "source": "RG 1.172",
+      "text": "Software requirements derived from system requirements and safety analyses shall include considerations based on abnormal conditions and events as described in IEEE Std. 7-4.3.2-2003.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_safety_requirements_include_abnormal_conditions",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-724",
+      "source": "RG 1.173",
+      "text": "The software life-cycle model shall perform all mandatory activities, meet all requirements described as 'shall', and account for all inputs, outputs, activities, preconditions, and postconditions described in IEEE Std. 1074-2006.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_all_mandatory_activities_performed",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-725",
+      "source": "RG 1.173",
+      "text": "The software life-cycle process descriptions shall identify applicable regulatory requirements, design bases, and related guidance as part of each activity's input and output information.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_regulatory_requirements_identified_in_activities",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-726",
+      "source": "RG 1.173",
+      "text": "All life-cycle activities and contingency actions shall be consistent with Criterion I of Appendix B to 10 CFR Part 50, which requires sufficient independence from cost and schedule when those actions are opposed to safety software quality.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_activities_independent_of_cost_schedule_pressures",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-727",
+      "source": "RG 1.173",
+      "text": "If preexisting or commercial off-the-shelf software is incorporated into a safety system, an acceptance process shall be included at an appropriate point in the life-cycle model to establish its suitability for the intended use.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_cots_software_acceptance_process_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-728",
+      "source": "RG 1.173",
+      "text": "The life-cycle planning activities shall address secure software development environment and cyber security as primary security objectives, with reference to RG 1.152 and RG 5.71 respectively.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_security_objectives_sdoe_and_cybersecurity",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-729",
+      "source": "RG 1.173",
+      "text": "Planned and documented software safety analysis activities shall be conducted for each phase of the software development life cycle.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_software_safety_analysis_conducted_each_phase",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-730",
+      "source": "RG 1.173",
+      "text": "The software safety analysis shall ensure that system safety requirements have been correctly addressed, no new hazards have been introduced, and software elements that can affect safety are identified.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_safety_analysis_verifies_no_new_hazards",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-731",
+      "source": "RG 1.173",
+      "text": "The software life cycle shall include a Software Safety Analysis Activity Group with documented input information, activity descriptions, and output information for each phase.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_software_safety_analysis_activity_group_documented",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-732",
+      "source": "RG 1.173",
+      "text": "Installation of new or modified safety system software shall be performed only when all functions affected by the software have been declared inoperable in accordance with plant technical specifications.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_installation_requires_affected_functions_declared_inoperable",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-733",
+      "source": "RG 1.173",
+      "text": "A temporary work-around shall not be permitted in any safety system unless all software changes are performed in accordance with software configuration controls and the changed software is checked in an off-line mode prior to installation.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_temporary_workaround_requires_config_control_offline_check",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-734",
+      "source": "RG 1.173",
+      "text": "All changes to safety systems shall be evaluated using the criteria specified in 10 CFR 50.59, and if outside the scope of 10 CFR 50.59, the change shall be submitted for review as a licensing amendment request.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_system_changes_evaluated_per_10cfr5059",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-735",
+      "source": "RG 1.173",
+      "text": "Maintenance activities for safety system software shall conform to the configuration control and verification and validation procedures agreed to under the licensing basis.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_maintenance_conforms_to_licensing_basis_vv",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-736",
+      "source": "RG 1.173",
+      "text": "Tailoring of packaged software or database data that constitutes a design change shall be subject to the full range of design and quality assurance measures applicable to safety system software development.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_software_tailoring_design_changes_require_qa",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-737",
+      "source": "RG 1.173",
+      "text": "The developer shall always provide review, audit, and test milestones for the software project life cycle, in addition to performing formal software V&V, technical reviews, or audits.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_review_audit_test_milestones_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-738",
+      "source": "RG 1.173",
+      "text": "The software life-cycle model shall include an acceptance process whose inputs, outputs, activities, preconditions, and postconditions meet the applicable regulatory requirements and design bases for the safety system.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdlc_acceptance_process_meets_regulatory_requirements",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-739",
+      "source": "RG 5.71",
+      "text": "The licensee shall establish, implement, and maintain a cybersecurity program plan (CSP) that describes how the requirements of 10 CFR 73.54 will be implemented at the nuclear facility.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "csp_established_implemented_maintained",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-740",
+      "source": "RG 5.71",
+      "text": "The CSP shall describe how the licensee provides high assurance that digital computer and communication systems associated with safety-related, important-to-safety, security, and emergency preparedness functions are adequately protected against cyberattacks up to and including the design-basis threat.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "csp_describes_ssep_protection_against_dbt",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-741",
+      "source": "RG 5.71",
+      "text": "The CSP shall describe the approach used to identify critical digital assets (CDAs) that are within the scope of 10 CFR 73.54(b)(1).",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "csp_cda_identification_approach_described",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-742",
+      "source": "RG 5.71",
+      "text": "The licensee shall conduct a site-specific analysis of digital computer and communication systems and networks to identify CDAs, where CDAs are those assets that, if compromised, could adversely impact the SSEP functions.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_identification_requires_site_specific_analysis",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-743",
+      "source": "RG 5.71",
+      "text": "The licensee shall perform an initial consequence analysis of plant systems, equipment, communication systems, and networks without accounting for existing mitigating measures to determine the worst-case impact if a CDA were compromised.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_consequence_analysis_without_mitigating_measures",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-744",
+      "source": "RG 5.71",
+      "text": "The CDA documentation shall include a description of potential attack surfaces and attack pathways for each CDA and a description of the potential consequences to SSEP functions if a compromise were to occur.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_documentation_includes_attack_surfaces_and_consequences",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-745",
+      "source": "RG 5.71",
+      "text": "The licensee shall design its cybersecurity program to apply and maintain integrated defense-in-depth protective strategies to ensure the capability to detect, prevent, respond to, mitigate, and recover from cyberattacks.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_program_defense_in_depth_required",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-746",
+      "source": "RG 5.71",
+      "text": "The defensive architecture shall ensure that CDAs associated with safety-related and important-to-safety functions are allocated to the highest security level (Level 4) and are protected from all lower levels.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defensive_architecture_safety_cdas_allocated_level4",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-747",
+      "source": "RG 5.71",
+      "text": "The defensive architecture shall enforce only one-way data flow from Level 4 to Level 3 and from Level 3 to Level 2.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defensive_architecture_one_way_data_flow_between_levels",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-748",
+      "source": "RG 5.71",
+      "text": "Initiation of communications from digital assets at lower security levels to CDAs at higher security levels shall be implemented on a deny-all, permit-by-exception basis supported by complete justification and security risk analysis.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defensive_architecture_deny_all_permit_by_exception_upward",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-749",
+      "source": "RG 5.71",
+      "text": "Applications, services, and protocols not necessary to support the design-basis function of CDAs shall be eliminated as part of the defensive architecture.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defensive_architecture_unnecessary_services_eliminated",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-750",
+      "source": "RG 5.71",
+      "text": "The access control policy shall define procedures that describe access control rights, system hardening, management of CDA accounts, auditing of CDAs at least annually or upon changes in personnel responsibilities, and separation of duties.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "access_control_policy_and_procedures_documented",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-751",
+      "source": "RG 5.71",
+      "text": "The licensee shall implement identification and authentication mechanisms that uniquely identify each user or application, verify identity, disable user identifiers after a defined period of inactivity, and change default authenticators upon control system installation.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "identification_authentication_unique_id_and_default_change",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-752",
+      "source": "RG 5.71",
+      "text": "The CSP shall include incident response and recovery measures describing how the licensee will maintain prompt detection and response capability, mitigate cyberattack consequences, correct exploited vulnerabilities, and restore affected systems.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "csp_incident_response_recovery_measures_described",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-753",
+      "source": "RG 5.71",
+      "text": "A cybersecurity event shall be reported within the timeframe specified in 10 CFR 73.77(a), and the incident response and recovery measures shall be integrated into the cybersecurity program and the emergency preparedness plan.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_event_reported_per_10cfr7377_timeframe",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-754",
+      "source": "RG 5.71",
+      "text": "The licensee shall establish a supply chain risk management program and a procurement policy that provides high assurance that the integrity of systems and services is maintained during the procurement process.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "supply_chain_risk_management_program_established",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-755",
+      "source": "RG 5.71",
+      "text": "The configuration management policy shall be developed, disseminated, and annually reviewed and updated, and shall apply to both licensee and vendor personnel to ensure unauthorized or inadvertent modification of a CDA is prevented.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "configuration_management_policy_annually_reviewed_applies_to_vendors",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-756",
+      "source": "RG 5.71",
+      "text": "The licensee shall ensure, as part of its cybersecurity program, that appropriate facility personnel including contractors are aware of cybersecurity requirements and receive training necessary to perform their assigned duties effectively.",
+      "difficulty": "easy",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_awareness_training_for_all_personnel_including_contractors",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-757",
+      "source": "RG 5.71",
+      "text": "A security control shall not be applied if it adversely impacts SSEP functions or performance, and when such adverse effects are identified, alternate controls shall be used to protect the CDA from cyberattack.",
+      "difficulty": "hard",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "security_control_not_applied_if_adverse_ssep_impact",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-758",
+      "source": "RG 5.71",
+      "text": "The cybersecurity program review shall be conducted as a component of the physical security program review in accordance with the requirements of 10 CFR 73.55(m) and shall include the required periodicity.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_program_reviewed_as_part_of_physical_security",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-759",
+      "source": "RG 5.71",
+      "text": "The CSP shall describe how the cybersecurity program is incorporated into the physical protection program, consistent with 10 CFR 73.54(b)(3), including consideration of cyberattacks during the development and identification of target sets.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "csp_cybersecurity_incorporated_into_physical_protection",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "id": "GT-760",
+      "source": "RG 5.71",
+      "text": "The licensee shall develop, disseminate, and periodically review and update a cybersecurity training and awareness plan and shall perform a gap analysis in areas where additional training is needed.",
+      "difficulty": "medium",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cybersecurity_training_plan_gap_analysis_performed",
+          "operator": "==",
+          "value": true,
+          "confidence": 0.95
+        }
+      ]
+    }
+  ]
+}
