@@ -77,7 +77,7 @@ We aim to respond within 5 business days.
 ## Quick Start
 
 ```bash
-git clone https://github.com/limgyuhyun/gt833-nuclear-benchmark
+git clone https://github.com/total8100-cloud/gt833-nuclear-benchmark
 cd gt833-nuclear-benchmark
 pip install -r requirements.txt
 
