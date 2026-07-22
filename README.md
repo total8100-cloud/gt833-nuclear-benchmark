@@ -18,9 +18,12 @@ This repository provides:
 | Resource | Description | Access |
 |----------|-------------|--------|
 | `data/public/gt833_nrc_public_v3.json` | 225 NRC public-domain annotations | Public |
+| `data/public/adams30.json` | ADAMS-30: the 30-requirement subset (RG 1.152/1.168/5.71) used for Table 1 / Table 14 of the paper | Public |
+| `data/public/evaluate_adams30.py` | Evaluation script for the ADAMS-30 subset | Public |
+| `data/public/gt833_tier2_metadata.json` | Full GT-833 (833 items) structured metadata — constraint tuples, source citations, hierarchy; verbatim text withheld for copyrighted (IEEE/IEC/EPRI) sources | Public |
 | `data/schema/annotation_schema_v3.json` | Full 7-tuple annotation schema | Public |
 | `evaluation/` | Benchmark evaluation scripts | Public |
-| Full GT-833 (833 items incl. IEEE/IEC/EPRI) | Complete benchmark | On request |
+| Full GT-833 verbatim text (IEEE/IEC/EPRI sources) | Copyrighted source text | On request |
 
 ---
 

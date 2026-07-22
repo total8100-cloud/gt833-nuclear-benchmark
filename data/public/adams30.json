@@ -1,0 +1,688 @@
+{
+  "name": "ADAMS-30",
+  "description": "Public-domain subset of the NeuSys GT-833 benchmark. 30 requirements from NRC Regulatory Guides RG 1.152, RG 1.168, and RG 5.71, all publicly available via NRC ADAMS. Includes full source text, constraint annotations, difficulty labels, and regulatory hierarchy metadata. Released under CC BY 4.0.",
+  "version": "1.0",
+  "created": "2026-04-10T01:56:12.151755",
+  "license": "CC BY 4.0",
+  "citation": "Lim, G.-H. and Jeong, Y.-C. (2026). NeuSys: A Neuro-Symbolic Framework for Nuclear Regulatory Compliance Verification. Reliability Engineering & System Safety.",
+  "sources": [
+    "RG 1.152",
+    "RG 1.168",
+    "RG 5.71"
+  ],
+  "regulatory_bodies": [
+    "NRC Regulatory Guide"
+  ],
+  "parent_regulation": "10 CFR 50.55a",
+  "statistics": {
+    "total_requirements": 30,
+    "total_constraints": 30,
+    "by_source": {
+      "RG 1.152": 12,
+      "RG 1.168": 10,
+      "RG 5.71": 8
+    },
+    "by_difficulty": {
+      "easy": 14,
+      "hard": 4,
+      "medium": 12
+    },
+    "by_constraint_type": {
+      "temporal": 2,
+      "numeric": 1,
+      "boolean": 27
+    }
+  },
+  "schema": {
+    "id": "Unique requirement identifier (GT-XXX)",
+    "text": "Verbatim requirement text from source document",
+    "requirement_type": "mandatory | informative",
+    "constraints": "List of extracted constraint objects (7-tuple)",
+    "source": "Source regulatory document identifier",
+    "difficulty": "Annotation difficulty: easy | medium | hard",
+    "notes": "Annotator notes",
+    "hierarchy_level": "Regulatory hierarchy depth (1=NRC RG)",
+    "hierarchy_level_name": "Human-readable hierarchy level name",
+    "parent_regulation": "Immediate parent regulation",
+    "top_regulation": "Top-level federal regulation"
+  },
+  "constraint_schema": {
+    "constraint_type": "boolean | numeric | temporal",
+    "variable": "Parameter or attribute name",
+    "operator": "Comparison operator (<=, >=, ==, etc.)",
+    "value": "Constraint threshold value",
+    "unit": "Unit of measurement (null for boolean)"
+  },
+  "requirements": [
+    {
+      "id": "GT-002",
+      "text": "Recovery time shall be no more than 24 hours.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "recovery_time",
+          "operator": "<=",
+          "value": 24,
+          "unit": "hours"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-003",
+      "text": "The system shall maintain availability of at least 99.9%.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "numeric",
+          "variable": "availability",
+          "operator": ">=",
+          "value": 99.9,
+          "unit": "percent"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-008",
+      "text": "Software verification shall be performed by personnel independent of the development team.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "independent_verification",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "hard",
+      "notes": "Abstract constraint - independence requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-204",
+      "text": "Software tools used in the development of safety system software shall be qualified to demonstrate their suitability for the intended application.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "safety_software_development_tools_qualified",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4 — software tool qualification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-205",
+      "text": "Software requirements specifications for safety system software shall be prepared, reviewed, and approved prior to commencement of software design.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "srs_prepared_reviewed_approved",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.1 — SRS preparation and approval sequence",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-206",
+      "text": "Verification and validation of the software shall be conducted in accordance with the Software Verification and Validation Plan (SVVP).",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_conducted_per_svvp",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.3 — V&V per SVVP",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-207",
+      "text": "A Software Quality Assurance Plan (SQAP) shall be prepared and implemented for safety system software development activities.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sqap_prepared_and_implemented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.4 — SQAP requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-208",
+      "text": "A Software Configuration Management Plan (SCMP) shall be prepared and implemented to control safety system software throughout its life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "scmp_prepared_and_implemented",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "easy",
+      "notes": "RG 1.152 §4.5 — SCMP requirement",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-209",
+      "text": "Each software item shall be independently reviewed by personnel not responsible for its development prior to its use in safety functions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "software_item_independently_reviewed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.3 — independent review of software items",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-210",
+      "text": "The response time for safety functions implemented in digital computer systems shall not exceed the maximum allowable response time defined in the design basis.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "temporal",
+          "variable": "safety_function_response_time",
+          "operator": "<=",
+          "value": 100.0,
+          "unit": "ms"
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "hard",
+      "notes": "RG 1.152 §4.2 — digital safety function response time limit",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-211",
+      "text": "The Software Development Plan (SDP) shall document the processes, methods, standards, and tools to be used throughout the software development life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "sdp_documents_processes_and_standards",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.1 — SDP content requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-212",
+      "text": "Safety system software shall undergo a formal design review that examines compliance with requirements, design standards, and safety criteria.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "formal_design_review_conducted",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "medium",
+      "notes": "RG 1.152 §4.3 — formal design review requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-213",
+      "text": "Digital I&C systems used in safety functions shall be designed so that a single failure does not prevent the safety function from performing its intended action.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "single_failure_does_not_prevent_safety_function",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.152",
+      "difficulty": "hard",
+      "notes": "RG 1.152 §4.2 — single failure criterion for digital I&C",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-214",
+      "text": "The V&V plan shall be prepared and maintained for each software item used in safety systems throughout the software life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_plan_prepared_and_maintained",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.1 — V&V plan preparation and maintenance",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-215",
+      "text": "V&V tasks shall be performed at each phase of the software development life cycle to detect errors as early as possible.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_tasks_performed_at_each_sdlc_phase",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.2 — V&V tasks at each SDLC phase",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-216",
+      "text": "The SVVP shall identify V&V tasks for the requirements, design, implementation, testing, and installation phases of the software life cycle.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "svvp_identifies_vv_tasks_for_all_phases",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.1 — SVVP phase coverage",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-217",
+      "text": "Traceability between software requirements and test cases shall be established and maintained to ensure complete test coverage.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "requirements_to_test_case_traceability_established",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.3 — requirements-to-test traceability",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-218",
+      "text": "V&V activities shall include an evaluation of whether the software requirements are correct, complete, consistent, and verifiable.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_evaluates_requirements_quality",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.2 — requirements quality evaluation in V&V",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-219",
+      "text": "The V&V effort shall be conducted by personnel who are organizationally and technically independent of the development team.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_personnel_independent_of_development",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.1 — V&V independence",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-220",
+      "text": "V&V test documentation shall include test plans, test procedures, test cases, and test reports for each V&V task.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_test_documentation_complete",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "easy",
+      "notes": "RG 1.168 §4.4 — V&V test documentation requirements",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-221",
+      "text": "Acceptance criteria for each V&V task shall be defined in advance and approved before the V&V task begins.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "vv_acceptance_criteria_predefined",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "medium",
+      "notes": "RG 1.168 §4.3 — pre-defined V&V acceptance criteria",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-222",
+      "text": "All V&V discrepancy reports shall be resolved and closed before the software is placed into service in a safety function.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "all_vv_discrepancies_resolved_before_service",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 1.168",
+      "difficulty": "hard",
+      "notes": "RG 1.168 §4.4 — discrepancy resolution before operational use",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 50.55a",
+      "top_regulation": "10 CFR 50.55a"
+    },
+    {
+      "id": "GT-223",
+      "text": "A cyber security assessment shall be performed to identify critical digital assets and critical systems associated with nuclear safety, security, and emergency preparedness functions.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_security_assessment_performed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.1 — cyber security assessment and CDA identification",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-224",
+      "text": "Defense-in-depth protective strategies shall be implemented for critical digital assets to provide protection against the consequences of cyber attacks.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "defense_in_depth_implemented_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.2 — defense-in-depth for critical digital assets",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-225",
+      "text": "Access controls for critical digital assets shall be implemented to limit access to authorized individuals and to detect unauthorized access attempts.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "access_controls_implemented_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.3 — access controls for CDAs",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-226",
+      "text": "The cyber security program shall include monitoring of critical digital assets to detect, analyze, and respond to cyber attacks in a timely manner.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_monitoring_for_cyber_attack_detection",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.4 — cyber attack monitoring and detection",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-227",
+      "text": "Portable media and mobile devices shall not be connected to critical digital assets unless they have been scanned and cleared by the cyber security program.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "portable_media_scanned_and_cleared",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.5 — portable media and mobile device controls",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-228",
+      "text": "A cyber security incident response plan shall be developed, maintained, and tested to ensure timely and effective response to cyber security incidents.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cyber_incident_response_plan_developed",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.6 — cyber security incident response plan",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-229",
+      "text": "Security patches for software on critical digital assets shall be evaluated and applied in a timely manner consistent with the cyber security program.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "security_patches_evaluated_for_cda",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "medium",
+      "notes": "RG 5.71 §C.3 — security patch management for CDAs",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    },
+    {
+      "id": "GT-230",
+      "text": "Personnel with responsibilities for critical digital assets shall receive cyber security training commensurate with their duties and responsibilities.",
+      "requirement_type": "mandatory",
+      "constraints": [
+        {
+          "constraint_type": "boolean",
+          "variable": "cda_personnel_receive_cyber_security_training",
+          "operator": "==",
+          "value": true,
+          "unit": null
+        }
+      ],
+      "source": "RG 5.71",
+      "difficulty": "easy",
+      "notes": "RG 5.71 §C.7 — cyber security training for CDA personnel",
+      "hierarchy_level": 1,
+      "hierarchy_level_name": "NRC Regulatory Guide (RG)",
+      "parent_regulation": "10 CFR 73.54",
+      "top_regulation": "10 CFR 73.54"
+    }
+  ]
+}
