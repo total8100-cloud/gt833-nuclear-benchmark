@@ -1,13 +1,13 @@
 # GT-833 and NeuSys: Nuclear Regulatory Constraint Extraction Benchmark
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper](https://img.shields.io/badge/Paper-RESS_2026-blue)](https://doi.org/XXXX)
+[![Paper](https://img.shields.io/badge/Paper-NED_2026-blue)](https://doi.org/XXXX)
 
 Official repository for:
 
 > **GT-833 and NeuSys: An Auditable Neuro-Symbolic Framework for Nuclear Regulatory Constraint Extraction and Consistency Checking**  
 > Gyu-Hyun Lim, Yuchul Jung  
-> *Reliability Engineering and System Safety* (2026, under review)
+> *Nuclear Engineering and Design* (2026, under review)
 
 ---
 
@@ -113,7 +113,7 @@ Key safety properties:
              for Nuclear Regulatory Constraint Extraction and
              Consistency Checking},
   author  = {Lim, Gyu-Hyun and Jung, Yuchul},
-  journal = {Reliability Engineering and System Safety},
+  journal = {Nuclear Engineering and Design},
   year    = {2026},
   note    = {Under review}
 }
